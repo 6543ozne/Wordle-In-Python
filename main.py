@@ -30,47 +30,18 @@ def main():
     answer = get_5_letter_word()
     word = ""
     for i in range(6):
+            
             word = input("Enter the word: ")
-            if len(word) != 5 or not check_word(word):
-                print("Please enter a 5-letter word.")
-                continue
-            else:
-                result  = color_word(word, answer)
-                print(result)
-                if word == answer:
-                    print("Congratulations! You've guessed the word!")
-                    break
+            while len(word) != 5 or not check_word(word):
+                    print("Please enter a 5-letter word.")
+                    word = input("Enter the word: ")
+
+            result  = color_word(word, answer)
+            print(result)
+            if word == answer:
+                print("Congratulations! You've guessed the word!")
+                break
+
     print (f"The correct word was: {answer}")
     
-            
-
-print('''                                                                                                                             ┌───┐
-                                                        ┌──┐                                                                 │   │
-                                                        │  │               ┌──┐                                              │   │
-                                                        │  │               │  │                                              │   │
-                                                        │  │               │  │                                              │   │
-                                                        │  │               │  │                                              │   │
-                                                        │  │       ┌─┐     │  │                                              │   │
-                                                        │  │       │ │     │  │     ┌───────────┐    ┌──────────┐            │   │
-                                                        │  │       │ │     │  │     │           │   ┌│┐         │     ┌─────────┐│
-                                                        │  │       │ │     │  │     │  ┌──────┐ │   │└──────────┘     │      │  ││
-                                                        │  │       │ │     │  │     │  │      │ │   │ │               │┌─────┐  ││
-                                                        │ ┌────────│┐│     │  │     │  └──────┘ │   │ │               ││     │  ││
-                                                        │ ││       ││┌─────│  │     │           │   │ │               │└─────┘  ││
-                                                        └─└────────└─└─────└──┘     └───────────┘   └─┘               │      └──│┘
-                                                                                                                      └─────────┘ 
-                                                           ┌─┐                      ┌───────────────────────┐                     
-                                                           │ │                      │                       │                     
-                                                           │ │                     ┌│┐                      │                     
-                                                           │ │                     │└───────────────────────┘                     
-                                                           │ │                     │ │                                            
-                                                           │ │                     │ │                                            
-                                                           │ │                     │┌───────────────────┐                         
-                                                           │┌──────────────┐       │└───────────────────┘                         
-                                                           │││             │       │ │                                            
-                                                           │││             │       ┌──────────────────────┐                       
-                                                           │││             │       │                      │                       
-                                                           └└──────────────┘       └──────────────────────┘                       
-                                                                                                                                  
-─                                                                                                                                 ''')
 main()
